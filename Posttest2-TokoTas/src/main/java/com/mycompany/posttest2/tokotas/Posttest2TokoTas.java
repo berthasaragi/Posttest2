@@ -60,17 +60,16 @@ public class Posttest2TokoTas{
         tasRepository.tambahTas(tasBaru);
     }
 
-    private static void lihatSemuaTas(RepositoryTas tasRepository) {
-        ArrayList<Tas> semuaTas = tasRepository.dapatkanSemuaTas();
+     private static void lihatSemuaTas(RepositoryTas tasRepository) {
+         ArrayList<Tas> semuaTas = tasRepository.dapatkanSemuaTas();
         System.out.println("=== Semua Tas ===");
-        if (tasRepository != null) {
-            System.out.print("Data Kosong !!! ");
-           
+        if (semuaTas.isEmpty()) {
+            System.out.println("Data Kosong !!!");
         } else {
             for (Tas tas : semuaTas) {
-            System.out.println("ID: " + tas.getId() + "\nNama: " + tas.getNama() 
-                    + ", \nStok: " + tas.getStok() + "\nHarga: " + tas.getHarga());
-        }
+                System.out.println("ID: " + tas.getId() + "\nNama: " + tas.getNama() 
+                    + " \nStok: " + tas.getStok() + "\nHarga: " + tas.getHarga());
+            }
         }  
     }
 
